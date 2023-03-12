@@ -1,9 +1,11 @@
 import React from 'react';
 
-const defaultCurrencies = ['RUB', 'USD', 'EUR', 'GBP'];
+const defaultCurrencies = ['BYN', 'USD', 'EUR', 'GBP'];
 
-export const Block = ({ value, currency, onChangeValue, onChangeCurrency }) => (
-  <div className="block">
+export const Block = ({ value, currency, onChangeValue, onChangeCurrency }) => {
+  
+  return (
+    <div className="block">
     <ul className="currencies">
       {defaultCurrencies.map((cur) => (
         <li
@@ -23,8 +25,10 @@ export const Block = ({ value, currency, onChangeValue, onChangeCurrency }) => (
     <input
       onChange={(e) => onChangeValue(e.target.value)}
       value={value}
+      min='0'
       type="number"
       placeholder={0}
     />
   </div>
-);
+  )
+};
